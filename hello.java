@@ -6,18 +6,21 @@ public class hello
 	{
 		try 
 		{
+			// open a file and pass it to FileReader
 			File file = new File("hello_unicode.txt");
 			FileReader readFile = new FileReader(file);
+			// read file line by line
 			BufferedReader readByLine = new BufferedReader(readFile);
-			StringBuffer stringBuffer = new StringBuffer();
 			String line;
 			while ((line = readByLine.readLine()) != null) 
 			{
-				stringBuffer.append(line + '\n');
+				// print each line to the console 
+				System.out.println(line);
 			}
+			// close FileReader
 			readFile.close();
-			System.out.println(stringBuffer.toString());
 		} 
+		// handle file exception
 		catch (IOException e) 
 		{
 			System.out.println("File not found.");
